@@ -1,0 +1,222 @@
+/* ════════════════════════ S1 (варіант C) — перший екран ════════════════════════
+   Макет 428×759 (Figma). --u = 1px макета, масштабується до ширини
+   екрана (макс. 440px), як у s1.css.                                        */
+
+.s1c {
+  --u: calc(min(100vw, 440px) / 428);
+
+  position: relative;
+  width: min(100vw, 440px);
+  height: calc(759 * var(--u));
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  background: #000 url(../images/v3/c-bg.webp) center top / 100% 100% no-repeat;
+}
+/* nullStyle.css жорстко задає шрифт — повертаємо успадкування */
+.s1c a,
+.s1c span,
+.s1c p,
+.s1c b {
+  font-family: inherit;
+}
+.s1c a { color: inherit; text-decoration: none; }
+
+/* Спільне для текстових блоків: позиції пораховані від верху line-box (line-height: 1) */
+.s1c-t {
+  position: absolute;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ── Заголовок ── */
+.s1c-title {
+  font-family: 'League Gothic', 'LeagueGothic', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #FFF3F6;
+}
+.s1c-title__pre {
+  top: calc(42.89 * var(--u));
+  left: calc(108.45 * var(--u));
+  font-size: calc(30 * var(--u));
+}
+.s1c-title__top {
+  top: calc(74.78 * var(--u));
+  left: calc(70.41 * var(--u));
+  font-size: calc(62.36 * var(--u));
+}
+.s1c-title__bottom {
+  top: calc(132.52 * var(--u));
+  left: calc(25.53 * var(--u));
+  font-size: calc(98.25 * var(--u));
+  color: #DB0B3E;
+}
+
+.s1c-subtitle {
+  top: calc(229.64 * var(--u));
+  left: calc(52.54 * var(--u));
+  font-size: calc(18 * var(--u));
+}
+
+/* ── Скляна картка з ціною ── */
+.s1c-card {
+  position: absolute;
+  top: calc(450 * var(--u));
+  left: calc(24 * var(--u));
+  width: calc(380 * var(--u));
+  height: calc(118.48 * var(--u));
+  border-radius: calc(16 * var(--u));
+  -webkit-backdrop-filter: blur(calc(17.5 * var(--u)));
+  backdrop-filter: blur(calc(17.5 * var(--u)));
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 calc(14 * var(--u)) rgba(219, 11, 62, 0.32);
+  font-weight: 800;
+}
+/* Рамка 1px: кільце через mask, всередині — повернутий радіальний градієнт з макета */
+.s1c-card__border {
+  position: absolute;
+  inset: 0;
+  padding: calc(1 * var(--u));
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+.s1c-card__border i {
+  position: absolute;
+  top: calc(-243.352 * var(--u));
+  left: calc(-772.534 * var(--u));
+  width: calc(1561.068 * var(--u));
+  height: calc(486.704 * var(--u));
+  transform: rotate(17.5993deg);
+  background: radial-gradient(
+    calc(390.267 * var(--u)) calc(121.676 * var(--u)) at 50% 50%,
+    #AD002A 0%,
+    rgba(173, 0, 42, 0) 51.4423%,
+    rgba(173, 0, 42, 0.55) 100%
+  );
+}
+.s1c-card .s1c-t:not(.s1c-old) {
+  text-shadow:
+    0 0 calc(14 * var(--u)) rgba(219, 11, 62, 0.32),
+    0 calc(2 * var(--u)) calc(15 * var(--u)) rgba(78, 55, 39, 0.55);
+}
+.s1c-old {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: calc(20 * var(--u));
+  top: calc(10.73 * var(--u));
+}
+.s1c-old--val { left: calc(15.58 * var(--u)); }
+.s1c-old--per { top: calc(10.9 * var(--u)); left: calc(67.03 * var(--u)); }
+/* Лінія (15,28) → (118.5,11), 1px, round cap */
+.s1c-card__strike {
+  position: absolute;
+  top: calc(27.5 * var(--u));
+  left: calc(14.5 * var(--u));
+  width: calc(105.887 * var(--u));
+  height: calc(1 * var(--u));
+  border-radius: calc(0.5 * var(--u));
+  background: #FF0000;
+  transform: rotate(-9.3275deg);
+  transform-origin: calc(0.5 * var(--u)) 50%;
+}
+.s1c-price__new {
+  top: calc(33.05 * var(--u));
+  left: calc(13.36 * var(--u));
+  font-size: calc(45 * var(--u));
+}
+.s1c-price__note {
+  top: calc(45.56 * var(--u));
+  left: calc(92.6 * var(--u));
+  font-size: calc(20 * var(--u));
+}
+.s1c-save {
+  position: absolute;
+  top: calc(21.24 * var(--u));
+  left: calc(249 * var(--u));
+  width: calc(116 * var(--u));
+  height: calc(43 * var(--u));
+  padding-top: calc(11.82 * var(--u));
+  border-radius: calc(21.5 * var(--u));
+  background: linear-gradient(167.57deg, #F01147 -27.9%, #B0002B 90.2%);
+  box-shadow:
+    0 0 calc(14 * var(--u)) rgba(219, 11, 62, 0.32),
+    0 calc(2 * var(--u)) calc(15 * var(--u)) rgba(78, 55, 39, 0.55);
+  font-size: calc(20 * var(--u));
+  line-height: 1;
+  text-align: center;
+}
+.s1c-card .s1c-pay {
+  top: calc(88.86 * var(--u));
+  left: calc(14.99 * var(--u));
+  font-size: calc(18 * var(--u));
+  font-weight: 400;
+}
+
+/* ── Нижній блок ── */
+.s1c-perk__text,
+.s1c-trust {
+  text-shadow: 0 calc(2 * var(--u)) calc(15 * var(--u)) rgba(78, 55, 39, 0.55);
+}
+
+.s1c-cta {
+  position: absolute;
+  top: calc(582.48 * var(--u));
+  left: calc(24 * var(--u));
+  width: calc(380 * var(--u));
+  height: calc(65 * var(--u));
+  border-radius: calc(24 * var(--u));
+  background: linear-gradient(90deg, #B0002B 0%, #660A22 100%);
+  box-shadow: 0 calc(2 * var(--u)) calc(15 * var(--u)) rgba(78, 55, 39, 0.55);
+  animation: ctaPulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+.s1c-cta__text {
+  top: calc(19.97 * var(--u));
+  left: calc(45.36 * var(--u));
+  font-size: calc(26 * var(--u));
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.s1c-icon {
+  position: absolute;
+  top: calc(661.48 * var(--u));
+  width: calc(20 * var(--u));
+  height: calc(20 * var(--u));
+  overflow: visible;
+  filter: drop-shadow(0 calc(2 * var(--u)) calc(7.5 * var(--u)) rgba(78, 55, 39, 0.55));
+}
+.s1c-icon--1 { left: calc(24 * var(--u)); }
+.s1c-icon--2 { left: calc(303 * var(--u)); }
+
+.s1c-perk__text {
+  top: calc(664.63 * var(--u));
+  font-size: calc(14 * var(--u));
+}
+.s1c-perk__text--1 { left: calc(52.05 * var(--u)); }
+.s1c-perk__text--2 { left: calc(331.05 * var(--u)); }
+
+.s1c-avatars {
+  position: absolute;
+  top: calc(694.73 * var(--u));
+  left: calc(24 * var(--u));
+  width: calc(113 * var(--u));
+  height: calc(25.25 * var(--u));
+  filter: drop-shadow(0 calc(2 * var(--u)) calc(7.5 * var(--u)) rgba(78, 55, 39, 0.55));
+}
+.s1c-trust {
+  top: calc(699.44 * var(--u));
+  left: calc(175.96 * var(--u));
+  font-size: calc(16 * var(--u));
+}
+.s1c-trust b { font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .s1c-cta { animation: none; }
+}

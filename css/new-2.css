@@ -1,0 +1,397 @@
+
+
+.s25 {
+    width: 440px;
+    background: #090606;
+    padding: 45px 24px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-family: 'Source Sans 3', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    overflow: hidden;
+    color: #FFFFFF;
+  }
+
+  /* --- Шапка --- */
+  .s25-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .s25-title {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+    color: #FFFFFF;
+  }
+
+  .s25-title-red {
+    color: #DB0B3E;
+    font-family: 'League Gothic', sans-serif;
+  }
+
+  .s25-top-badge {
+    background: linear-gradient(90deg, #B0002B 0%, #660A22 100%);
+    border-radius: 100px;
+    padding: 6px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .s25-badge-icon {
+    width: 16px;
+    height: 16px;
+    fill: #FFFFFF;
+    flex-shrink: 0;
+  }
+
+  .s25-badge-text {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .s25-subtext {
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  .s25-subtext strong {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  /* --- Список карток --- */
+  .s25-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .s25-card {
+    width: 100%;
+    height: 220px;
+    border-radius: 24px;
+    box-sizing: border-box;
+    position: relative;
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .s25-card-1 {
+    background-image: url('../images/new/img3.webp');
+  }
+
+  .s25-card-2 {
+    background-image: url('../images/new/img2.webp');
+  }
+
+  .s25-card-3 {
+    background-image: url('../images/new/img1.webp');
+  }
+
+  .s25-card-content {
+    width: 205px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 2;
+  }
+
+  .s25-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Source Sans 3', sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .s25-card-desc {
+    font-size: 16px;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+
+  /* --- Підсумкова картка ціни --- */
+  .s25-total-box {
+    width: 100%;
+    background: linear-gradient(90deg, #B0002B 0%, #660A22 100%);
+    border-radius: 16px;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .s25-total-title {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-family: 'Source Sans 3', sans-serif;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .s25-total-sub {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+
+  .s25-price-pill {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 100px;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .s25-price-label {
+    color: #730924;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.15;
+    text-align: left;
+  }
+
+  .s25-price-val {
+    color: #730924;
+    font-family: 'League Gothic', 'Outfit', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  /* --- Адаптив під max-width: 440px у vw --- */
+  @media (max-width: 440px) {
+    .s25 {
+      width: 100vw;
+      padding: 10.227vw 5.454vw;
+      gap: 7.272vw;
+    }
+
+    .s25-header {
+      gap: 3.181vw;
+    }
+
+    .s25-title {
+      font-size: 10.909vw;
+    }
+
+    .s25-top-badge {
+      border-radius: 22.727vw;
+      padding: 1.363vw 3.636vw;
+      gap: 1.818vw;
+    }
+
+    .s25-badge-icon {
+      width: 3.636vw;
+      height: 3.636vw;
+    }
+
+    .s25-badge-text {
+      font-size: 3.409vw;
+    }
+
+    .s25-subtext {
+      font-size: 3.636vw;
+    }
+
+    .s25-cards-list {
+      gap: 4.545vw;
+    }
+
+    .s25-card {
+      height: 50.000vw;
+      border-radius: 5.454vw;
+      border-width: 0.227vw;
+      padding: 5.454vw;
+    }
+
+    .s25-card-content {
+      width: 46.590vw;
+      gap: 2.727vw;
+    }
+
+    .s25-card-title {
+      font-size: 4.545vw;
+    }
+
+    .s25-card-desc {
+      font-size: 3.68vw;
+    }
+
+    .s25-total-box {
+      border-radius: 3.636vw;
+      padding: 5.454vw;
+      gap: 3.181vw;
+    }
+
+    .s25-total-title {
+      font-size: 4.545vw;
+    }
+
+    .s25-total-sub {
+      font-size: 3.181vw;
+    }
+
+    .s25-price-pill {
+      border-radius: 22.727vw;
+      padding: 2.272vw 5.454vw;
+    }
+
+    .s25-price-label {
+      font-size: 3.636vw;
+    }
+
+    .s25-price-val {
+      font-size: 10.909vw;
+    }
+  }
+
+.s26 {
+    width: 440px;
+    background: #090606;
+    padding: 50px 25px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-family: 'Source Sans 3', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    overflow: hidden;
+  }
+
+  /* --- Заголовок --- */
+  .s26-header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .s26-title {
+    font-family: 'League Gothic', 'Righteous', sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 0.8px;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  .s26-title-red {
+    color: #DB0B3E;
+    font-family: 'League Gothic', 'Righteous', sans-serif;
+  }
+
+  /* --- Картка-марка з гарантією --- */
+  .s26-stamp-card {
+    position: relative;
+    width: 390px;
+    height: 535px;
+    background-image: url('../images/new/img4.webp');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+  }
+
+  /* Верхній опис поруч із бейджем */
+  .s26-top-text {
+    position: absolute;
+    top: 52px;
+    left: 105px;
+    width: 250px;
+    font-size: 18.7px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1F1A0F;
+    margin: 0;
+  }
+
+  /* Основний текст гарантії */
+  .s26-body-text {
+    position: absolute;
+    top: 122px;
+    left: 38px;
+    width: 330px;
+    font-size: 18.7px;
+    line-height: 1.38;
+    color: #1F1A0F;
+    text-align: center;
+    margin: 0;
+  }
+
+  .s26-body-text strong {
+    font-weight: 700;
+  }
+
+  .s26-body-text p:last-child {
+    margin-bottom: 0;
+  }
+
+
+
+
+@media (max-width: 440px) {
+  .s26 {
+    width: 100vw;
+    padding: 11.363vw 5.681vw;
+    gap: 6.363vw;
+  }
+
+  .s26-title {
+    font-size: 9.545vw;
+    letter-spacing: 0.181vw;
+  }
+
+  .s26-stamp-card {
+    width: 88.636vw;
+    height: 121.590vw;
+  }
+
+  .s26-top-text {
+    top: 11.818vw;
+    left: 23.863vw;
+    width: 56.818vw;
+    font-size: 4.25vw;
+  }
+
+  .s26-body-text {
+    top: 27.727vw;
+    left: 8.636vw;
+    width: 75vw;
+    font-size: 4.25vw;
+  }
+}
+

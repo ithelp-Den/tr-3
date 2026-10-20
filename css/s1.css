@@ -1,0 +1,233 @@
+/* ════════════════════════════ S1 — перший екран ════════════════════════════
+   Макет 428×701 (Figma). --u = 1px макета, масштабується до ширини
+   екрана (макс. 440px), тому окремий @media для s1 не потрібен.        */
+
+.s1 {
+  --u: calc(min(100vw, 440px) / 428);
+
+  position: relative;
+  width: min(100vw, 440px);
+  height: calc(701 * var(--u));
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: 'Source Sans 3', sans-serif;
+  color: #fff;
+  background: #000 url(../images/v2/im5.webp) center top / 100% 100% no-repeat;
+}
+/* nullStyle.css жорстко задає span/p шрифт SourceSans3-Regular — повертаємо успадкування */
+.s1 a,
+.s1 span,
+.s1 p,
+.s1 b {
+  font-family: inherit;
+}
+
+/* ── Бігуча стрічка ── */
+.s1-ticker {
+  position: absolute;
+  top: calc(40 * var(--u));
+  left: calc(-17 * var(--u));
+  width: calc(463 * var(--u));
+  padding: calc(3 * var(--u)) 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse 60.92% 465% at 49.78% 0%, rgba(96, 18, 14, 0.7) 46%, rgba(0, 0, 0, 0) 100%);
+  box-shadow: 0 calc(4 * var(--u)) calc(8 * var(--u)) rgba(0, 0, 0, 0.15);
+  border-radius: calc(100 * var(--u));
+  outline: 1px solid #FF517C;
+  outline-offset: -1px;
+}
+.s1-ticker__track {
+  display: flex;
+  width: max-content;
+}
+.s1-ticker__group {
+  display: flex;
+  flex-shrink: 0;
+  gap: calc(8 * var(--u));
+  padding-right: calc(8 * var(--u));
+  animation: s1-ticker 10s linear infinite;
+}
+.s1-ticker__item {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  font-size: calc(14 * var(--u));
+  font-weight: 800;
+  line-height: calc(20 * var(--u));
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.s1-ticker__item::before {
+  content: "";
+  width: calc(10.5 * var(--u));
+  height: calc(15 * var(--u));
+  background: url(../images/v2/im6.webp) center / contain no-repeat;
+}
+@keyframes s1-ticker {
+  to { transform: translateX(-100%); }
+}
+
+/* ── Заголовок ── */
+.s1-title {
+  position: absolute;
+  top: calc(86.2 * var(--u));
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(1 * var(--u));
+  font-family: 'LeagueGothic', 'League Gothic', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+.s1-title__top {
+  font-size: calc(78 * var(--u));
+  line-height: calc(62 * var(--u));
+  color: #FFF3F6;
+}
+.s1-title__bottom {
+  font-size: calc(91.5 * var(--u));
+  line-height: calc(75 * var(--u));
+  background: linear-gradient(180deg, #EC5C7B 0%, #C72A42 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Підзаголовок ── */
+.s1-subtitle {
+  position: absolute;
+  top: calc(241 * var(--u));
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: calc(24 * var(--u));
+  font-weight: 600;
+  line-height: calc(19 * var(--u));
+}
+
+/* ── Ціна (фон плашки — частина im5) ── */
+.s1-price {
+  position: absolute;
+  top: calc(279 * var(--u));
+  left: calc(24 * var(--u));
+  padding: calc(8 * var(--u)) calc(40 * var(--u));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(6 * var(--u));
+  font-weight: 800;
+}
+.s1-price__old {
+  position: relative;
+  font-size: calc(18 * var(--u));
+  font-weight: 700;
+  line-height: calc(19 * var(--u));
+  color: #BBB2B4;
+}
+.s1-price__old::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(8.5 * var(--u));
+  width: calc(95.6 * var(--u));
+  height: calc(2 * var(--u));
+  background: #fff;
+  transform: rotate(-6.6deg);
+}
+.s1-price__new {
+  display: flex;
+  align-items: center;
+  gap: calc(2.8 * var(--u));
+  height: calc(54.6 * var(--u));
+  font-size: calc(69.69 * var(--u));
+  line-height: 1;
+}
+.s1-price__currency {
+  width: calc(33.6 * var(--u));
+  height: calc(51.8 * var(--u));
+}
+.s1-price__note {
+  font-size: calc(18 * var(--u));
+  line-height: calc(19 * var(--u));
+}
+
+/* ── Нижній блок ── */
+.s1-bottom {
+  position: absolute;
+  top: calc(510 * var(--u));
+  left: 0;
+  right: 0;
+  padding: 0 calc(24 * var(--u));
+  display: flex;
+  flex-direction: column;
+  gap: calc(14 * var(--u));
+}
+
+.s1-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: calc(63 * var(--u));
+  padding: calc(6 * var(--u)) calc(6 * var(--u)) calc(6 * var(--u)) calc(8 * var(--u));
+  background: linear-gradient(90deg, #B0002B 0%, #660A22 100%);
+  border-radius: calc(24 * var(--u)) calc(100 * var(--u)) calc(100 * var(--u)) calc(24 * var(--u));
+  color: #fff;
+  text-decoration: none;
+  animation: ctaPulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+.s1-cta__text {
+  font-size: calc(24 * var(--u));
+  font-weight: 900;
+  line-height: calc(18 * var(--u));
+  letter-spacing: calc(1.92 * var(--u));
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.s1-cta__badge {
+  position: absolute;
+  transform: rotate(8deg);
+  top: calc(-9.8 * var(--u));
+  left: calc(295.7 * var(--u));
+  width: calc(84 * var(--u));
+  height: calc(84 * var(--u));
+  filter: drop-shadow(0 calc(4 * var(--u)) calc(4 * var(--u)) rgba(0, 0, 0, 0.25));
+}
+
+.s1-perks,
+.s1-trust {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.s1-perk {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  font-size: calc(16 * var(--u));
+  font-weight: 600;
+  line-height: calc(15 * var(--u));
+}
+.s1-perk__icon {
+  width: calc(40 * var(--u));
+  height: calc(40 * var(--u));
+}
+
+.s1-trust__avatars {
+  width: calc(96 * var(--u));
+  height: calc(21.5 * var(--u));
+  object-fit: cover;
+  object-position: left center;
+}
+.s1-trust__text {
+  font-size: calc(14 * var(--u));
+  line-height: calc(20 * var(--u));
+}
+.s1-trust__text b { font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .s1-ticker__group,
+  .s1-cta { animation: none; }
+}
